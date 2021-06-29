@@ -1,0 +1,1790 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    background: #f1f1f1;
+}
+
+ul#nav {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 60px;
+    background: #fff;
+    list-style-type: none;
+    overflow: hidden;
+    font-weight: bold;
+    color: rgb(68, 68, 68);
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+ul#nav li.left {
+    float: left;
+}
+
+ul#nav li.right {
+    float: right;
+}
+
+ul#nav li.title {
+    padding-left: 5%;
+    padding-right: 30px;
+    font-size: 30px;
+    text-align: center;
+    line-height: 60px;
+    font-weight: normal;
+}
+
+ul#nav li a {
+    display: block;
+    text-align: center;
+    height: 60px;
+    line-height: 60px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-decoration: none;
+    color: rgb(68, 68, 68);
+}
+
+ul#nav li a.active {
+    background: rgb(240, 240, 240);
+}
+
+ul#nav li a:hover {
+    background: rgb(240, 240, 240);
+}
+
+li#person:hover > .personnav {
+    display: block;
+}
+
+ul.personnav {
+    display: none;
+    position: fixed;
+    list-style-type: none;
+    padding-left: 0px;
+    background: #fff;
+    z-index: 1000;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+    width: 150px;
+}
+
+.totop {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    bottom: 60px;
+    right: 40px;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    cursor: pointer;
+    text-align: center;
+    z-index: 1500;
+}
+
+.totop i {
+    width: 100%;
+    line-height: 50px;
+    font-size: 30px;
+}
+
+.pages {
+    width: 100%;
+    margin-top: 20px;
+    position: relative;
+    height: 50px;
+}
+
+.pages ul {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.pages ul li {
+    float: left;
+    margin: 0 3px 0 3px;
+    border-left-width: 0;
+}
+
+.pages ul li:nth-child(1) {
+    border-left-width: 1px;
+}
+
+.pages ul li i {
+    font-weight: bold;
+}
+
+.pages ul li.active > a {
+    background: rgb(116, 181, 255);
+    color: #fff;
+}
+
+.pages ul li a {
+    color: #000;
+    display: inline-block;
+    width: 20px;
+    text-align: center;
+    padding: 4px;
+    text-decoration: none;
+}
+
+.pages .progress {
+    position: absolute;
+    top: 50%;
+    right: -90px;
+    transform: translate(-50%, -50%);
+}
+
+/* ------------------------------------ */
+
+.main {
+    margin-top: 80px;
+}
+
+.footer {
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    background: rgb(245, 245, 245);
+}
+
+.copyright {
+    text-align: center;
+    padding: 20px;
+    color: #ddd;
+}
+
+/* index */
+
+.index {
+    margin: 0 auto;
+    width: 90%;
+}
+
+.index .left {
+    overflow: hidden;
+    padding: 10px;
+}
+
+/* right */
+
+.index .right {
+    width: 300px;
+    margin-top: 10px;
+    float: right;
+}
+
+.index .right .search {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.index .right .search .searchInput {
+    width: 100%;
+    overflow: hidden;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.index .right .search .searchButton {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    cursor: pointer;
+    transform: translate(0, -50%);
+    border-left: 1px solid #ddd;
+    color: rgb(141, 141, 141);
+    padding: 0 10px 0 10px;
+}
+
+.index .right .search .searchButton i {
+    font-size: 20px;
+}
+
+.index .right .search .searchButton:hover {
+    color: rgb(102, 102, 102);
+}
+
+.index .right .search .clear {
+    position: absolute;
+    right: 50px;
+    top: 50%;
+    width: 16px;
+    height: 16px;
+    transform: translate(0px, -50%);
+    cursor: pointer;
+    font-size: 15px;
+    color: rgb(141, 141, 141);
+    background: rgb(233, 233, 233);
+    text-align: center;
+    line-height: 14px;
+    border-radius: 50%;
+}
+
+.index .right .search .clear:hover {
+    background: rgb(224, 224, 224);
+}
+
+.index .right .author {
+    padding: 10px 10px 0 10px;
+    background: #fff;
+}
+
+.index .right .author .title {
+    color: #848484;
+    position: relative;
+}
+
+.index .right .author .title::after {
+    content: "";
+    position: absolute;
+    height: 1px;
+    background: #ddd;
+    width: 100%;
+    left: 0;
+    bottom: -15px;
+    z-index: 2;
+}
+
+.index .right .author .title span:nth-child(1) {
+    position: relative;
+}
+
+.index .right .author .title span:nth-child(1)::after {
+    content: "";
+    position: absolute;
+    height: 1px;
+    background: #000;
+    width: 100%;
+    bottom: -15px;
+    left: 0;
+    z-index: 5;
+}
+
+.index .right .author .title a {
+    text-decoration: none;
+    color: #848484;
+    float: right;
+}
+
+.index .right .author .title a:hover {
+    color: #2c93e7;
+}
+
+.index .right .author .more {
+    text-align: center;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    border-radius: 5%;
+    margin-left: 30%;
+    margin-right: 30%;
+    background: rgb(230, 230, 230);
+    margin-top: 10px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.index .right .author .more:active {
+    background: rgb(219, 219, 219);
+}
+
+.index .right .author .list {
+    margin-top: 30px;
+    max-height: 330px;
+    overflow: hidden;
+}
+
+.index .right .author .list .person {
+    position: relative;
+    height: 60px;
+    margin-bottom: 5px;
+}
+
+.index .right .author .list .person .headimage {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    top: 50%;
+    margin-top: -25px;
+    margin-left: 5px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    object-fit: cover;
+}
+
+.index .right .author .list .person .name {
+    padding-top: 10px;
+    margin-left: 65px;
+}
+
+.index .right .author .list .person .content {
+    margin-left: 65px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-size: 15px;
+    margin-right: 40%;
+    color: rgb(94, 94, 94);
+}
+
+.index .right .author .list .person .follow {
+    position: absolute;
+    padding-left: 12px;
+    padding-right: 12px;
+    line-height: 30px;
+    transform: translate(0, -50%);
+    top: 50%;
+    right: 10px;
+    background: rgb(230, 230, 230);
+    border-radius: 7%;
+    cursor: pointer;
+}
+
+.index .right .author .list .person .follow:hover {
+    background: rgb(116, 181, 255);
+    color: #fff;
+}
+
+/* left */
+
+.index .left .search {
+    position: relative;
+    height: 40px;
+}
+
+.index .left .search .searchInput {
+    height: 40px;
+    width: 100%;
+    float: left;
+    overflow: hidden;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    padding-left: 15px;
+    padding-right: 15px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+}
+
+.index .left .search .searchButton {
+    position: absolute;
+    text-align: center;
+    right: 3px;
+    transform: translate(0px, -50%);
+    overflow: hidden;
+    padding: 7px 10px 7px 10px;
+    top: 50%;
+    cursor: pointer;
+    border-left: 1px solid #ddd;
+    color: rgb(141, 141, 141);
+}
+
+.index .left .search .searchButton:hover {
+    color: rgb(68, 68, 68);
+}
+
+.index .left .search .clear {
+    position: absolute;
+    right: 90px;
+    top: 50%;
+    width: 16px;
+    height: 16px;
+    transform: translate(0px, -50%);
+    cursor: pointer;
+    font-size: 15px;
+    color: rgb(141, 141, 141);
+    background: rgb(233, 233, 233);
+    text-align: center;
+    line-height: 14px;
+    border-radius: 50%;
+}
+
+.index .left .search .clear:hover {
+    background: rgb(224, 224, 224);
+}
+.index .left .list .article,
+.personal .left .list .article,
+.followed .right .list .article {
+    box-sizing: border-box;
+    padding: 10px;
+    padding-left: 20px;
+    width: 100%;
+    background: #fff;
+    border-bottom: 1px solid #ececec;
+    /* box-shadow: 0 1px 3px rgba(0, 0, 0, .1); */
+    overflow: hidden;
+}
+
+.index .left .list .article .top,
+.personal .left .list .article .top,
+.followed .right .list .article .top {
+    position: relative;
+    height: 45px;
+}
+
+.index .left .list .article .top .headimage,
+.personal .left .list .article .top .headimage,
+.followed .right .list .article .top .headimage {
+    position: absolute;
+    float: left;
+    width: 36px;
+    height: 36px;
+    top: 50%;
+    margin-top: -19px;
+    /* margin-left: 7px; */
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    object-fit: cover;
+}
+
+.index .left .list .article .top .name,
+.personal .left .list .article .top .name,
+.index .left .list .article .top .time,
+.personal .left .list .article .top .time,
+.followed .right .list .article .top .name,
+.followed .right .list .article .top .time {
+    color: #6f6f6f;
+    line-height: 45px;
+    float: left;
+}
+
+.index .left .list .article .top .name,
+.personal .left .list .article .top .name,
+.followed .right .list .article .top .name {
+    margin-left: 45px;
+}
+
+.index .left .list .article .top .time,
+.personal .left .list .article .top .time,
+.followed .right .list .article .top .time {
+    margin-left: 10px;
+}
+
+.index .left .list .article .middle,
+.personal .left .list .article .middle,
+.followed .right .list .article .middle {
+    margin-top: 5px;
+}
+
+.index .left .list .article .middle .title,
+.personal .left .list .article .middle .title,
+.followed .right .list .article .middle .title {
+    cursor: pointer;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: bold;
+    color: #4d4d4d;
+    text-decoration: none;
+}
+
+.index .left .list .article .middle .title:hover,
+.personal .left .list .article .middle .title:hover,
+.followed .right .list .article .middle .title:hover {
+    text-decoration: underline;
+}
+
+.index .left .list .article .middle .content,
+.personal .left .list .article .middle .content,
+.followed .right .list .article .middle .content {
+    display: inline-block;
+    margin-top: 7px;
+    font-size: 16px;
+    color: #4d4d4d;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.index .left .list .article .bottom,
+.personal .left .list .article .bottom,
+.followed .right .list .article .bottom {
+    position: relative;
+    height: 30px;
+    margin-top: 7px;
+}
+
+.index .left .list .article .bottom .num,
+.personal .left .list .article .bottom .num,
+.followed .right .list .article .bottom .num {
+    margin-right: 12px;
+    float: left;
+    line-height: 30px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #6f6f6f;
+}
+
+.index .left .list .article .bottom .tag,
+.personal .left .list .article .bottom .tag,
+.followed .right .list .article .bottom .tag {
+    margin-right: 6px;
+    position: relative;
+    float: left;
+    top: 50%;
+    transform: translate(0, -50%);
+    background: rgb(110, 180, 255);
+    color: #fff;
+    padding: 0 5px 0 5px;
+    border-radius: 20px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 13px;
+}
+
+/* -------------------------------------------- */
+
+/* person-setting */
+
+.setting {
+    margin: 0 auto;
+    width: 90%;
+}
+
+.setting .left {
+    position: fixed;
+    width: 230px;
+    background: #fff;
+    float: left;
+}
+
+.setting .right {
+    overflow: hidden;
+    background: rgb(255, 255, 255);
+    margin-bottom: 100px;
+    margin-left: 240px;
+    /* box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1); */
+}
+
+.setting .left .title {
+    padding: 20px;
+    text-align: center;
+    font-size: 25px;
+    color: rgb(58, 58, 58);
+}
+
+.setting .left .editprofile,
+.setting .left .changepassword {
+    color: rgb(58, 58, 58);
+    text-align: center;
+    padding: 20px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.setting .right #editprofile,
+.setting .right #changepassword {
+    padding: 50px;
+    padding-top: 20px;
+    display: none;
+}
+
+.setting .right #editprofile .row1 {
+    height: 150px;
+    position: relative;
+}
+
+.setting .right #editprofile .row1 .headimage {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    margin-top: -50px;
+    float: left;
+    border: 2px solid #ddd;
+    object-fit: cover;
+}
+
+.setting .right #editprofile .row1 .changeimage {
+    margin-left: 120px;
+    position: absolute;
+    top: 50%;
+    height: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
+    line-height: 40px;
+    display: inline-block;
+    overflow: hidden;
+    margin-top: -20px;
+    cursor: pointer;
+    background: rgb(247, 247, 247);
+}
+
+.setting .right #editprofile .row,
+.setting .right #changepassword .row {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    font-size: 20px;
+}
+
+.setting .right #editprofile .row input,
+.setting .right #changepassword .row input,
+#gender {
+    margin-top: 5px;
+    padding-left: 10px;
+    font-size: 20px;
+    outline: none;
+    height: 45px;
+    width: 50%;
+    box-sizing: border-box;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1) inset;
+    border: 1px solid #ccc;
+}
+
+.setting .right #changepassword .row span {
+    display: inline-block;
+    width: 150px;
+    text-align: right;
+    margin-left: -50px;
+}
+
+.setting .right #editprofile .row textarea {
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1) inset;
+    border: 1px solid #ccc;
+    display: block;
+    width: 100%;
+    height: 150px;
+    margin-top: 10px;
+    outline: none;
+    font-size: 20px;
+    padding: 10px;
+    font-family: "微软雅黑";
+}
+
+.edit,
+.save {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100px;
+    margin-top: 15px;
+    font-size: 20px;
+    display: inline-block;
+    text-align: center;
+    background: rgb(247, 247, 247);
+    cursor: pointer;
+}
+
+/* -------------------------------------- */
+
+/* personal */
+
+.personal {
+    margin: 0 auto;
+    width: 90%;
+    padding-top: 10px;
+}
+
+.personal .moreCom {
+    text-decoration:none;
+    color: #999;
+}
+
+.personal .moreCom:hover {
+    text-decoration:underline;
+}
+
+.personal .left {
+    overflow: hidden;
+    margin-bottom: 100px;
+}
+
+.personal .right {
+    margin-left: 20px;
+    float: right;
+    width: 300px;
+    margin-bottom: 100px;
+    padding: 10px;
+    background: #fff;
+}
+
+.personal .right .one {
+    background: #fff;
+}
+
+.personal .right .row1 {
+    padding-left: 13px;
+    position: relative;
+    height: 90px;
+}
+
+.personal .right .row1 img {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    float: left;
+    top: 50%;
+    margin-top: -35px;
+    margin-left: 10px;
+    border: 1px solid #ddd;
+    object-fit: cover;
+}
+
+.personal .right .row1 span {
+    margin-left: 100px;
+    font-size: 20px;
+    display: block;
+    padding-top: 12px;
+}
+
+.personal .right .row1 .follow {
+    margin-left: 100px;
+    display: inline-block;
+    background: rgb(230, 230, 230);
+    padding: 5px 10px 5px 10px;
+    margin-top: 7px;
+    border-radius: 3%;
+    cursor: pointer;
+    border-radius: 7%;
+}
+
+.personal .right .row1 .follow i {
+    font-size: 15px;
+    margin-right: 5px;
+}
+
+.personal .right .row2 {
+    height: 50px;
+    padding: 3px;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+}
+
+.personal .right .row2 .box {
+    flex-grow: 1;
+    text-align: center;
+    cursor: pointer;
+}
+
+.personal .right .row2 .box span {
+    display: block;
+}
+
+.split {
+    height: 1px;
+    background: #ddd;
+    margin: 0 auto;
+}
+
+.personal .right .row3 {
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    position: relative;
+}
+
+.personal .right .row3 .like {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background: rgb(230, 230, 230);
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    border-radius: 5px;
+}
+
+.personal .right .row3 input {
+    border-radius: 5px;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 16px;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    border: 1px solid #ddd;
+}
+
+.personal .right .row3 .clear {
+    position: absolute;
+    right: 50px;
+    top: 50%;
+    width: 16px;
+    height: 16px;
+    line-height: 14px;
+    background: rgb(233, 233, 233);
+    transform: translate(0px, -50%);
+    cursor: pointer;
+    color: rgb(141, 141, 141);
+    text-align: center;
+    border-radius: 50%;
+}
+
+.personal .right .row3 .clear:hover {
+    background: rgb(224, 224, 224);
+}
+
+.personal .right .row3 .clear::before {
+    display: none;
+    content: "清除";
+    position: absolute;
+    width: 25px;
+    right: 13px;
+    top: 60%;
+    font-size: 12px;
+    transform: translate(0px, -50%);
+    background: #ddd;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.personal .right .row3 i {
+    cursor: pointer;
+    position: absolute;
+    padding: 5px;
+    right: 13px;
+    top: 50%;
+    transform: translate(0px, -50%);
+    font-size: 20px;
+    color: rgb(141, 141, 141);
+}
+
+.personal .right .row3 i:hover {
+    color: rgb(81, 81, 81);
+}
+
+.personal .right .row4 {
+    padding: 20px;
+    padding-bottom: 2px;
+}
+
+.personal .right .row4 span {
+    display: block;
+    padding: 5px;
+    border-left: 5px solid rgb(179, 179, 179);
+}
+
+.personal .right .row4 ul {
+    padding: 0;
+    list-style: none;
+}
+
+.personal .right .row4 li {
+    margin-top: 10px;
+}
+
+.personal .right .row4 li a{
+    cursor: pointer;
+}
+
+.personal .right .row4 .article {
+    margin-top: 10px;
+    font-weight: bold;
+    color: rgb(94, 94, 94);
+    text-decoration: none;
+}
+
+.personal .right .row4 .article:hover {
+    text-decoration: underline;
+}
+
+.personal .left .tabs {
+    background: #fff;
+    display: flex;
+    align-items: center;
+}
+
+.personal .left .tabs i {
+    position: relative;
+    right: 5px;
+}
+
+.personal .left .tabs .box {
+    /* flex-grow: 1; */
+    width: 15%;
+    text-align: center;
+    padding-top: 20px;
+    color: rgb(100, 100, 100);
+    font-size: 17px;
+    font-weight: bold;
+    padding-bottom: 20px;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+}
+.personal .left .tabs .box.box2 {
+    width: 100%;
+    cursor: default;
+}
+
+.personal .left .tabs .box.active:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background: rgb(100, 100, 100);
+    bottom: 0;
+    left: 0;
+}
+
+.personal .left .tip {
+    color: rgb(163, 163, 163);
+    margin-top: 10px;
+    padding: 10px;
+    background: #fff;
+    position: relative;
+    display: none;
+}
+
+.personal .left .tip span {
+    cursor: pointer;
+    color: #000;
+    font-size: 18px;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translate(0, -53%);
+}
+
+.personal .left .list {
+    margin-top: 10px;
+}
+
+.personal .left .list .noperson {
+    font-size: 25px;
+    text-align: center;
+    background: #fff;
+    height: 100px;
+    line-height: 100px;
+}
+
+.personal .left .list .article .top .delete {
+    position: relative;
+    float: right;
+    cursor: pointer;
+}
+
+.personal .left .list .article .top .delete:hover::after {
+    display: block;
+}
+
+.personal .left .list .article .top .delete:hover::before {
+    display: block;
+}
+
+.personal .left .list .article .top .delete:after {
+    display: none;
+    content: attr(data-text);
+    position: absolute;
+    width: 75px;
+    right: 23px;
+    text-align: center;
+    top: -3px;
+    background: rgb(70, 70, 70);
+    border-radius: 10%;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    color: #fff;
+}
+
+.personal .left .list .article .top .delete:before {
+    display: none;
+    content: "";
+    position: absolute;
+    right: 16px;
+    width: 0;
+    height: 0;
+    top: 1px;
+    border-top: 10px solid transparent;
+    border-left: 20px solid rgb(70, 70, 70);
+    border-bottom: 10px solid transparent;
+}
+
+.personal .left .list .followperson,
+.followed .right .adduserlist .followperson {
+    height: 100px;
+    width: 100%;
+    background: #fff;
+    position: relative;
+    border-bottom: 1px solid #ddd;
+}
+
+.personal .left .list .followperson img,
+.followed .right .adduserlist .followperson img {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    border: 1px solid #ddd;
+    margin-left: 20px;
+    float: left;
+    cursor: pointer;
+    object-fit: cover;
+}
+
+.personal .left .list .followperson .info .name,
+.followed .right .adduserlist .followperson .info .name {
+    display: inline-block;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.personal .left .list .followperson .info .name:hover,
+.followed .right .adduserlist .followperson .info .name:hover {
+    text-decoration: underline;
+}
+
+.personal .left .list .followperson .info .content,
+.personal .left .list .followperson .info span,
+.followed .right .adduserlist .followperson .info .content,
+.followed .right .adduserlist .followperson .info span {
+    font-size: 14px;
+    color: rgb(95, 95, 95);
+}
+
+.personal .left .list .followperson .info,
+.followed .right .adduserlist .followperson .info {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    display: block;
+    margin-left: 110px;
+}
+
+.personal .left .list .followperson .btn,
+.personal .left .list .followperson .btn1,
+.followed .right .adduserlist .followperson .btn,
+.followed .right .adduserlist .followperson .btn1 {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    right: 20px;
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.personal .left .list .followperson .btn span:nth-child(2),
+.followed .right .adduserlist .followperson .btn span:nth-child(2) {
+    display: none;
+}
+
+.personal .left .list .followperson .btn:hover span:nth-child(2),
+.followed .right .adduserlist .followperson .btn:hover span:nth-child(2) {
+    display: block;
+}
+
+.personal .left .list .followperson .btn:hover span:nth-child(1),
+.followed .right .adduserlist .followperson .btn:hover span:nth-child(1) {
+    display: none;
+}
+
+/* ----------------------------------------- */
+
+/* follow */
+
+.followed,
+.message {
+    margin: 0 auto;
+    width: 90%;
+    padding-top: 10px;
+    margin-bottom: 200px;
+}
+
+.followed .left,
+.message .left {
+    width: 300px;
+    float: left;
+    background: #fff;
+    display: block;
+    position: fixed;
+}
+
+.followed .right,
+.message .right {
+    margin-left: 330px;
+    background: #fff;
+    /* box-shadow: 0 1px 3px rgba(0, 0, 0, .1); */
+    display: block;
+}
+
+.followed .left .title {
+    /* height: 43px; */
+}
+
+.followed .left .title span {
+    padding: 10px;
+}
+
+.followed .left .title span:nth-child(1) {
+    margin-left: 5px;
+    float: left;
+}
+
+.followed .left .title span:nth-child(2) {
+    float: right;
+    margin-right: 5px;
+}
+
+.followed .left .title span:nth-child(2):hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.followed .left .userlist {
+    height: 400px;
+    overflow: auto;
+}
+
+.followed .left .userlist .user {
+    position: relative;
+    height: 70px;
+}
+
+.followed .left .userlist .user:hover {
+    cursor: pointer;
+    background: rgb(247, 247, 247);
+    border-left: 3px solid skyblue;
+}
+
+.followed .left .userlist .user img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    margin-top: -25px;
+    margin-left: 10px;
+    float: left;
+    object-fit: cover;
+}
+
+.followed .left .userlist .user .name {
+    margin-left: 70px;
+    line-height: 70px;
+}
+
+.message .left .msglist span {
+    display: block;
+    padding: 20px;
+    font-size: 17px;
+    padding-left: 23px;
+    cursor: pointer;
+}
+
+.message .left .msglist span i {
+    position: relative;
+    top: -2px;
+    right: 6px;
+    vertical-align: middle;
+    font-size: 25px;
+    color: rgb(148, 148, 148);
+}
+
+.message .left .msglist span:hover {
+    background: rgb(233, 233, 233);
+}
+.message .right .list .msg{
+    background: #fff;
+    padding: 10px;
+    overflow: hidden;
+    position: relative;
+    border-bottom: 1px solid rgb(240, 240, 240);
+}
+.message .right .list .msg img{
+    height: 60px;
+    width:60px;
+    display: block;
+    padding: 5px;
+    border-radius: 50%;
+    float: left;
+    object-fit: cover;
+}
+.message .right .list .msg .info{
+    position: absolute;
+    left: 89px;
+    top: 50%;
+    transform: translate(0,-50%);
+    overflow: hidden;
+}
+.message .right .list .msg .info .time{
+    font-size: 14px;
+    color: #6f6f6f;
+}
+
+/* ---------------------------------------- */
+
+/* write*/
+
+.write-main {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.write-main .write-list {
+    width: 320px;
+    height: calc(100% - 60px);
+    position: fixed;
+    top: 60px;
+    overflow-y: auto;
+    background: #fff;
+    overscroll-behavior: contain;
+}
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+::-webkit-scrollbar {
+    width: 10px; /*滚动条宽度*/
+    height: 10px; /*滚动条高度*/
+}
+
+/*定义滚动条轨道 内阴影+圆角*/
+::-webkit-scrollbar-track {
+    /*滚动条的背景区域的内阴影*/
+    /* box-shadow:0px 1px 3px rgba(0,0,0,0.3) inset; */
+    /*滚动条的背景区域的圆角*/
+    border-radius: 10px;
+    /*滚动条的背景颜色*/
+    background-color: #ddd;
+}
+
+/*定义滑块 内阴影+圆角*/
+::-webkit-scrollbar-thumb {
+    /*滚动条的内阴影*/
+    /* box-shadow:0px 1px 3px rgba(0,0,0,0.3) inset; */
+    /*滚动条的圆角*/
+    border-radius: 10px;
+    /*滚动条的背景颜色*/
+    background-color: #aaa;
+}
+.write-main .write-list .list-main {
+    margin: 10px;
+    margin-top: 70px;
+    margin-bottom: 30px;
+}
+.write-main .write {
+    padding-left: 320px;
+    margin-top: -20px;
+    /* overflow-y: auto; */
+    height: calc(100vh - 70px);
+}
+.write-main .write .content {
+    padding: 10px;
+}
+.write-main .write-list .list-title {
+    width: 320px;
+    height: 60px;
+    position: fixed;
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+    z-index: 1000;
+}
+.write-main .write-list .list-title .a1 {
+    font-weight: bold;
+    line-height: 60px;
+    margin-left: 1rem;
+    font-size: 20px;
+    float: left;
+}
+.write-main .write-list .list-title .a2 {
+    font-size: 17px;
+    cursor: pointer;
+    position: relative;
+    top: 50%;
+    transform: translate(0, -50%);
+    overflow: hidden;
+    display: inline-block;
+    margin-left: 1rem;
+}
+.write-main .write-list .list-title .a2:hover {
+    box-shadow: 0px 2px 0 0 rgb(75, 75, 75);
+}
+.write-main .write-list .list-main .article,
+.write-main .write-list .list-main .noarticle {
+    background: #fff;
+    padding: 10px;
+    height: 50px;
+    line-height: 50px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
+}
+.write-main .write-list .list-main .noarticle {
+    text-align: center;
+    font-size: 20px;
+}
+.write-main .write-list .list-main .article.active {
+    box-shadow: inset 5px 0px 0 0 rgb(127, 189, 255),
+        0px 1px 5px rgba(0, 0, 0, 0.2);
+}
+.write-main .write-list .list-main .article:hover {
+    box-shadow: inset 5px 0px 0 0 rgb(127, 189, 255),
+        0px 1px 5px rgba(0, 0, 0, 0.2);
+}
+.write-main .write-list .list-main .article .recom{
+    display: inline-block;
+    float: left;
+    width: 20px;
+}
+.write-main .write-list .list-main .article .recom i{
+    font-size: 23px;
+    color: #fd4c4c;
+    position: relative;
+}
+.write-main .write-list .list-main .article .recom .coll_empty:hover:after{
+    display: inline-block;
+    content: "推荐该文章";
+    color:#fd4c4c;
+    width: 100px;
+    position: absolute;
+    font-size: 15px;
+    top: 10px;
+}
+.write-main .write-list .list-main .article .recom .coll_fill:hover:after{
+    display: inline-block;
+    content: "取消推荐该文章";
+    color:#fd4c4c;
+    width: 120px;
+    position: absolute;
+    font-size: 15px;
+    top: 10px;
+}
+.write-main .write-list .list-main .article .title {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.write-main .write-list .list-main .article .statu {
+    text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color: #fff;
+    width: 60px;
+    float: right;   
+}
+
+.write-main .write input,
+.write-main .write select {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    padding: 10px;
+    height: 40px;
+}
+.write-main .write select:invalid {
+    color: gray;
+}
+.write-main .write select {
+    height: 40px;
+    float: left;
+    width: 68%;
+}
+.write-main .write select option {
+    font-size: 25px;
+}
+.write-main .write .add {
+    background: #fff;
+    text-align: center;
+    height: 40px;
+    width: 30%;
+    float: right;
+    line-height: 40px;
+    overflow: hidden;
+}
+.write-main .write .add:hover {
+    cursor: pointer;
+    background: rgb(138, 202, 255);
+    color: #fff;
+}
+.write-main .write .tools {
+    position: fixed;
+    right: 30%;
+    top: 10px;
+    height: 40px;
+    background: #fff;
+    text-align: center;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+    background: rgb(127, 189, 255);
+    font-weight: bold;
+    z-index: 1600;
+}
+
+.write-main .write .addNewInput {
+    overflow: hidden;
+    display: none;
+}
+
+.write-main .write .addNewInput #tag {
+    width: 78%;
+    float: left;
+}
+
+.write-main .write .addNewInput .add {
+    width: 20%;
+}
+
+.savearticle {
+    padding: 0 20px 0 20px;
+    height: 40px;
+    line-height: 40px;
+    color: #fff;
+    font-size: 17px;
+    display: inline-block;
+}
+
+.savearticle:hover {
+    background: rgb(99, 174, 255);
+}
+
+#showArea {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 70%;
+    height: 100%;
+    z-index: 2000;
+    box-sizing: border-box;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+}
+#showArea::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+#showArea #ifr {
+    width: 100%;
+    padding: 30px;
+    min-height: 100%;
+    box-sizing: border-box;
+    background: #fff;
+}
+#showArea #ifr * {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.write-main .mask {
+    display: none;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 1999;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+.write-main .mask i {
+    position: absolute;
+    right: 10%;
+    top: 10%;
+    color: #fff;
+    font-size: 35px;
+    cursor: pointer;
+}
+
+/* ---------------------------------------- */
+
+/* intoarticle */
+
+.intoarticle {
+    margin: 0px auto;
+    width: 50%;
+    background: #fff;
+    margin-top: 90px;
+    padding: 20px;
+    margin-bottom: 100px;
+    overflow: hidden;
+}
+
+.intoarticle .title {
+    padding: 10px;
+    font-size: 35px;
+}
+
+.intoarticle .userinfo,
+.intoarticle .authorinfo {
+    margin: 10px 0px 10px 0px;
+    position: relative;
+    height: 60px;
+}
+
+.intoarticle .userinfo .sec,
+.intoarticle .authorinfo .sec {
+    position: absolute;
+    left: 80px;
+    top: 50%;
+    transform: translate(0px, -50%);
+}
+
+.intoarticle .userinfo .headimage,
+.intoarticle .authorinfo .headimage {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    float: left;
+    margin-left: 10px;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    object-fit: cover;
+}
+
+.intoarticle .userinfo .name,
+.intoarticle .authorinfo .name {
+    cursor: pointer;
+    float: left;
+}
+
+.intoarticle .userinfo .follow {
+    display: inline-block;
+    margin-left: 10px;
+    border-radius: 20px;
+    background: rgb(110, 180, 255);
+    color: #fff;
+    font-size: 13px;
+    padding: 2px;
+    padding-left: 7px;
+    padding-right: 7px;
+    cursor: pointer;
+}
+
+.intoarticle .userinfo .info {
+    margin-top: 5px;
+    font-size: 14px;
+    color: rgb(161, 161, 161);
+}
+
+.intoarticle .content {
+    margin-top: 20px;
+    padding: 5px;
+}
+.intoarticle .content * {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.intoarticle .content img {
+    max-width: 60%;
+}
+
+.intoarticle .copyright {
+    margin-top: 20px;
+    float: right;
+    font-size: 13px;
+    color: #ddd;
+}
+
+.intoarticle .card {
+    border: 1px solid #ddd;
+    margin-top: 70px;
+    padding: 10px;
+}
+
+.intoarticle .authorinfo .name {
+    float: none;
+}
+
+.intoarticle .authorinfo .info {
+    color: rgb(161, 161, 161);
+    font-size: 14px;
+}
+
+.intoarticle .authorinfo .sec {
+    left: 90px;
+}
+
+.intoarticle .authorinfo .btn1 {
+    float: right;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    right: 20px;
+    background: rgb(110, 180, 255);
+    color: #fff;
+    padding: 10px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.intoarticle .card .content {
+    padding: 10px;
+    margin-top: 5px;
+}
+
+.intoarticle .menu {
+    position: fixed;
+    top: 50%;
+    right: 5%;
+    transform: translate(0, -50%);
+}
+
+.intoarticle .menu div {
+    border-radius: 50%;
+    background: #fff;
+    cursor: pointer;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
+    position: relative;
+    margin-bottom: 10px;
+    padding: 6px;
+}
+
+.intoarticle .menu div:hover {
+    background: rgb(245, 245, 245);
+}
+
+.intoarticle .menu div:after {
+    content: attr(data-text);
+    position: absolute;
+    left: -45px;
+    top: 50%;
+    transform: translate(0, -50%);
+    display: none;
+    text-align: center;
+}
+
+.intoarticle .menu .unlike:after,
+.intoarticle .menu .uncollect:after {
+    left: -75px;
+}
+
+.intoarticle .menu div:hover:after {
+    display: block;
+}
+
+.intoarticle .menu div i {
+    color: rgb(107, 107, 107);
+    font-size: 25px;
+}
+
+.intoarticle .tags {
+    padding: 5px 10px 5px 10px;
+    position: relative;
+}
+
+.intoarticle .tags .tag {
+    background: rgb(110, 180, 255);
+    display: inline-block;
+    color: #fff;
+    padding: 0 5px 0 5px;
+    border-radius: 20px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 13px;
+}
+
+.tag i {
+    font-size: 13px;
+}
+
+.tag {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: 70px;
+}
+
+/* ---------------------- */
+
+/* about */
+
+.about {
+    margin: 0 auto;
+    width: 70%;
+    padding-top: 10px;
+}
+
+.about .content {
+    padding: 20px;
+    margin-top: 20px;
+    background: #fff;
+}
+
+.about .content .info {
+    border-left: 3px solid #ddd;
+}
+
+.about .content .info div {
+    padding: 15px;
+    padding-left: 20px;
+    font-size: 20px;
+}
+
+/* ------------------------------- */
+
+.tabsnum {
+    position: relative;
+    top: 1px;
+    left: 1px;
+}
+
+.icon-rilijiantouyoushuang,
+.icon-rilijiantouyoushuang1 {
+    font-size: 14px;
+}
+
+.icon-rilijiantouyoushuang1 {
+    position: relative;
+    top: -1px;
+}
+
+.icon-rilijiantouyoushuang {
+    position: relative;
+    top: -2px;
+}
+
+.innertitle {
+    text-align: center;
+    font-size: 1.5rem;
+    background: #fff;
+    padding: 20px;
+    border-bottom: 1px solid rgb(240, 240, 240);
+}
+
+#comment {
+    margin-top: 50px;
+}
+
+.msga {
+    position: relative;
+}
+.msgnum {
+    position: absolute;
+    display: block;
+    top: 2px;
+    right: 2px;
+    height: 18px;
+    width: 18px;
+    font-size: 12px;
+    line-height: 18px;
+    border-radius: 10px;
+    background: rgb(255, 95, 95);
+    color: #fff;
+    padding-left: 6px;
+    padding-right: 6px;
+}
