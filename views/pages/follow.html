@@ -1,0 +1,127 @@
+<% include ../sharePages/header.html %>
+
+    <div class="followed">
+        <div class="left">
+            <div class="title">
+                <span>全部关注</span>
+                <span onclick="location.href='/follow/add'"><i class="iconfont icon-add" style="font-weight:bold"></i>添加关注</span>
+            </div>
+            <div class="split" style="clear:both"></div>
+            <div class="userlist">
+                <div class="user" id="all" onclick="loadArticle(this)">
+                    <img src="/ico/jianbianquan.png" alt="">
+                    <div class="name">人人圈</div>
+                </div>
+                <% 
+                    if(data[0].followNum!=0){
+                        for(var i=0;i<data[0].followList.length;i++) {
+                %>
+                    <% if(data[0].followList[i].followType == 0) { %>
+                        <div class="user" id="<%= data[0].followList[i].followId._id %>" onclick="loadArticle(this)">
+                            <img src="<%= data[0].followList[i].followId.headImage %>" alt="">
+                            <div class="name">
+                                <%= data[0].followList[i].followId.name %>
+                            </div>
+                        </div>
+                        <% }}}else{ %>
+                            <div style="text-align:center;padding:5px">没有关注的人</div>
+                            <% } %>
+            </div>
+            <% include ../sharePages/copyright.html %>
+        </div>
+        <div class="right">
+            <% if(data.id == 'all'){ %>
+                <% if(data[0].followNum!=0){ %>
+                    <% if(data.art.length != 0){ %>
+                        <div class="innertitle">
+                            全部文章
+                        </div>
+                        <% }else{ %>
+                            <div class="innertitle">
+                                没有文章
+                            </div>
+                <% }}else{ %>
+                    <div class="innertitle">
+                        没有文章
+                    </div>
+                    <% } %>
+                <% }else{ %>
+                    <% if(data.art[0]){ %>
+                    <div class="innertitle">
+                        <%= data.art[0].authorId.name %>的文章
+                    </div>
+                    <% }else{ %>
+                        <div class="innertitle">
+                            TA没有文章
+                        </div>
+                    <%  }} %>
+
+                        <div class="list ">
+                            <% 
+                            if(data!=null){
+                                if(data[0].followNum!=0){
+                                    for(var i=0;i<data.art.length;i++){
+                                        var a = data.art[i];
+                                        var u = data.art[i].authorId;
+                        %>
+                                <div class="article">
+                                    <div class="top">
+                                        <img src="<%= u.headImage%>" alt=" " class="headimage" onclick="location.href='/personal/article/<%= u._id %>'">
+                                        <div class="name">
+                                            <%= u.name %>
+                                        </div>
+                                        <div class="time">
+                                            <%= dateFormat(a.createTime) %>
+                                        </div>
+                                    </div>
+                                    <div class="middle">
+                                        <a href="/article/<%=u._id %>/<%= a._id %>" class="title">
+                                            <%= a.title %>
+                                        </a>
+                                        <div class="content">
+                                            <%= a.text %>
+                                        </div>
+                                    </div>
+                                    <div class="bottom">
+                                        <% 
+                                            if(a.tag != 'notag'){
+                                                var t = a.tag.split(' ');
+                                                t.length = t.length<=3?t.length:3;
+                                                for(var j=0;j<t.length;j++){
+                                                    if(t[j]!=''){
+                                        %>
+                                            <div class="tag">
+                                                <i class="iconfont icon-tag"></i>
+                                                <%= t[j] %>
+                                            </div>
+                                            <% }}} %>
+                                                <div class="num">浏览:
+                                                    <%= a.lookNum %>
+                                                </div>
+                                                <div class="num">评论:
+                                                    <%= a.msgNum %>
+                                                </div>
+                                                <div class="num">喜欢:
+                                                    <%= a.likeNum %>
+                                                </div>
+                                    </div>
+                                </div>
+                                <% }}} %>
+                        </div>
+                        <% 
+                            if(data[0].followNum!=0){
+                                if(data.art.length != 0){
+                        %>
+                            <% include ../sharePages/page.html %>
+                            <% }} %>
+        </div>
+    </div>
+    <script>
+        var url = location.href.split('/')[4];
+        $('#' + url).css({
+            "background": "rgb(247, 247, 247)",
+            "border-left":"3px solid skyblue"
+        });
+    </script>
+
+    <% include ../sharePages/footer.html %>
